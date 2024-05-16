@@ -2,7 +2,7 @@
 <h1 align="center">Improving out-of-distribution generalization in graphs via hierarchical semantic environments</h1>
 <p align="center">
     <a href="https://arxiv.org/abs/2403.01773"><img src="https://img.shields.io/badge/arXiv-2403.01773-b31b1b.svg" alt="Paper"></a>
-    <a href="https://github.com/qkrdmsghk/"><img src="https://img.shields.io/badge/-Github-grey?logo=github" alt="Github"></a>
+    <a href="https://github.com/qkrdmsghk/GOODHSE"><img src="https://img.shields.io/badge/-Github-grey?logo=github" alt="Github"></a>
     <!-- <a href="https://colab.research.google.com/drive/1t0_4BxEJ0XncyYvn_VyEQhxwNMvtSUNx?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab"></a> -->
     <!-- <a href="https://openreview.net/forum?id=A6AFK_JwrIW"> <img alt="License" src="https://img.shields.io/static/v1?label=Pub&message=NeurIPS%2722&color=blue"> </a> -->
     <!-- <a href="https://github.com/LFhase/CIGA/blob/main/LICENSE"> <img alt="License" src="https://img.shields.io/github/license/LFhase/CIGA?color=blue"> </a> -->
