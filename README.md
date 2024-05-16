@@ -11,7 +11,7 @@
    <!--  <a href="https://icml.cc/media/PosterPDFs/ICML%202022/a8acc28734d4fe90ea24353d901ae678.png"> <img src="https://img.shields.io/badge/Poster-grey?logo=airplayvideo&logoColor=white" alt="Poster"></a> -->
 </p>
 
-<p align="center"><img src="./data/goodhse.png" width=100% height=50%></p>
+<p align="center"><img src="./goodhse.png" width=100% height=50%></p>
 <p align="center"><em>Figure 1.</em> (a) Results on IC50-SCA dataset from DrugOOD. (b) Flat environments from existing approaches. (c) Hierarchical environments from our methods. For visualization, we set #real environments as 10.</p>
 
 <!-- ## Introduction
@@ -87,9 +87,9 @@ We provide the hyperparamter tuning and evaluation details in the paper and appe
 In the below we give a brief introduction of the commands and their usage in our code. 
 We provide the corresponding running scripts in the [script](./scripts/) folder.
 
-To obtain results of ERM, simply run 
+Simply run 
 ```
-python main.py --erm
+bash run.sh 0 icassay
 ```
 with corresponding datasets and model specifications.
 
