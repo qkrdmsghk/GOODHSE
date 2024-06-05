@@ -11,64 +11,30 @@
    <!--  <a href="https://icml.cc/media/PosterPDFs/ICML%202022/a8acc28734d4fe90ea24353d901ae678.png"> <img src="https://img.shields.io/badge/Poster-grey?logo=airplayvideo&logoColor=white" alt="Poster"></a> -->
 </p>
 
-<p align="center"><img src="./goodhse.png" width=100% height=50%></p>
-<p align="center"><em>Figure 1.</em> (a) Results on IC50-SCA dataset from DrugOOD. (b) Flat environments from existing approaches. (c) Hierarchical environments from our methods. For visualization, we set #real environments as 10.</p>
+## Motivation
+The complex nature of molecule graphs poses unique challenges to out-of-distribution (OOD) generalization, differentiating them from images and general graphs:
 
-<!-- ## Introduction
-Despite recent success in using the invariance principle for out-of-distribution (OOD) generalization on Euclidean data (e.g., images), studies on graph data are still limited. Different from images, the complex nature of graphs poses unique challenges to adopting the invariance principle: -->
+1. Molecules with Similar Structures Can Have Different Functions:
+- Functional Group: Acts as a causal subgraph.
+- Scaffold: Serves as an environmental (noise) subgraph.
 
-<!-- 1. Distribution shifts on graphs can appear in **<ins>a variety of forms</ins>**:
-    - Node attributes;
-    - Graph structure;
-    - A mixure of both;
+2. Semantic Environments in OOD:
+- Environments are related.
+- Environments are hierarchical.
+<p align="center"><img src="./motivation.png" width=80% height=100%></p>
+<p align="center"><em>Figure 1.</em> Challenges on molecule graphs in out-of-distribution setting.</p>
 
-2. Each distribution shift can spuriously correlate with the label in **<ins>different modes</ins>**. We divide the modes into FIIF and PIIF, according to whether the latent causal feature $C$ fully determines the label $Y$, i.e., or $(S,E)\perp\mkern-9.5mu\perp Y|C$:
-    - Fully Informative Invariant Features (FIIF): $Y\leftarrow C\rightarrow S\leftarrow E$;
-    - Partially Informative Invariant Features (PIIF): $C\rightarrow Y\leftarrow S \leftarrow E$;
-    - Mixed Informative Invariant Features (MIIF): mixed with both FIIF and PIIF;
-
-3. **<ins>Domain or environment partitions</ins>**, which are often required by OOD methods on Euclidean data, can be highly expensive to obtain for graphs.
-
-This work addresses the above challenges by generalizing the causal invariance principle to graphs, and instantiating it as CIGA. Shown as in Figure 1, CIGA is powered by an information-theoretic objective that extracts the subgraphs which maximally preserve the invariant intra-class information.
-With certain assumptions, CIGA provably identifies the underlying invariant subgraphs (shown as the orange subgraphs).
-Learning with these subgraphs is immune to distribution shifts. 
-
-We implement CIGA using the interpretable GNN architecture, where the featurizer $g$ is designed to extract the invariant subgraph, and a classifier $f_c$ is designed to classify the extracted subgraph.
-The objective is imposed as an additional contrastive penalty to enforce the invariance of the extracted subgraphs at a latent sphere space (CIGAv1).
-
-1. When the size of underlying invariant subgraph $G_c$ is known and fixed across different graphs and environments, CIGAv1 is able to identify $G_c$. 
-2. While it is often the case that the underlying $G_c$ varies, we further incorporate an additional penalty that maximizes $I(G_s;Y)$ to absorb potential spurious parts in the estimated $G_c$ (CIGAv2).
-
-Extensive experiments on $16$ synthetic or real-world datasets, including a challenging setting -- DrugOOD, from AI-aided drug discovery, validate the superior OOD generalization ability of CIGA. -->
-
-<!-- ## Use GOODHSE in Your Code -->
-
-<!-- CIGA is consist of two key regularization terms: one is the contrastive loss that maximizes $I(\widehat{G}_c;\widetilde{G}_c|Y)$;
-the other is the hinge loss that maximizes $I(\widehat{G}_s;Y)$.
-
-The contrastive loss is implemented via a simple call (line 480 in `main.py`):
-```python
-get_contrast_loss(causal_rep, label)
-```
-which requires two key inputs:
-- `causal_rep`: the representations of the invariant subgraph representations;
-- `label`: the labels corresponding to the original graphs.
-
-The hinge loss is implemented in line 430 to line 445 in `main.py`:
-```python
-# a simple implementation of hinge loss
-spu_loss_weight = torch.zeros(spu_pred_loss.size()).to(device)
-spu_loss_weight[spu_pred_loss > pred_loss] = 1.0
-spu_pred_loss = spu_pred_loss.dot(spu_loss_weight) / (sum(spu_pred_loss > pred_loss) + 1e-6)
-```
-which requires two key inputs:
-- `spu_pred_loss`: sample-wise loss values of predictions based on the spurious subgraph $\widehat{G}_s$.
-- `pred_loss`: sample-wise loss values of predictions based on the invariant subgraph $\widehat{G}_c$.
-
-Then we can calculate the weights `spu_loss_weight` in the hinge loss for each sample based on the sample-wise loss values,
-and apply the weights to `spu_pred_loss`. -->
+## Challenges
+Existing methods use flat enviornments to conduct the graph invariant learning.
+There are two limitations in flat environment infernece:
+1. Provided (Real): neglect local similarity among the numerous environments.
+2. Inference (Infer #2): Inferring from a small number of environments may fail to capture global similarity and interrelationships among the environments. 
+<p align="center"><img src="./challenge.png" width=80% height=100%></p>
+<p align="center"><em>Figure 2.</em> (a) Results on IC50-SCA dataset from DrugOOD. (b) Flat environments from existing approaches. (c) Hierarchical environments from our methods. For visualization, we set #real environments as 10.</p>
 
 ## Instructions
+<p align="center"><img src="./model.png" width=80% height=100%></p>
+<p align="center"><em>Figure 3.</em>Our Framework consists of (a) Hierarchical Stochastic Subgraph Generation, (b) Hierarchical Semantic Environments, (c) Robust GIL with Hierarchical Semantic Environments.</p>
 
 ### Installation and data preparation
 Our code is based on the following libraries:
