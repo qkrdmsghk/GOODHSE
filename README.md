@@ -4,11 +4,11 @@
     <a href="https://arxiv.org/abs/2403.01773"><img src="https://img.shields.io/badge/arXiv-2403.01773-b31b1b.svg" alt="Paper"></a>
     <a href="https://github.com/qkrdmsghk/GOODHSE"><img src="https://img.shields.io/badge/-Github-grey?logo=github" alt="Github"></a>
     <!-- <a href="https://colab.research.google.com/drive/1t0_4BxEJ0XncyYvn_VyEQhxwNMvtSUNx?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab"></a> -->
-    <!-- <a href="https://openreview.net/forum?id=A6AFK_JwrIW"> <img alt="License" src="https://img.shields.io/static/v1?label=Pub&message=NeurIPS%2722&color=blue"> </a> -->
+    <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Piao_Improving_Out-of-Distribution_Generalization_in_Graphs_via_Hierarchical_Semantic_Environments_CVPR_2024_paper.pdf"> <img alt="License" src="https://img.shields.io/static/v1?label=Pub&message=CVPR%2724&color=blue"> </a>
     <!-- <a href="https://github.com/LFhase/CIGA/blob/main/LICENSE"> <img alt="License" src="https://img.shields.io/github/license/LFhase/CIGA?color=blue"> </a> -->
     <!-- <a href="https://neurips.cc/virtual/2022/poster/54643"> <img src="https://img.shields.io/badge/Video-grey?logo=Kuaishou&logoColor=white" alt="Video"></a> -->
     <!-- <a href="https://lfhase.win/files/slides/CIGA.pdf"> <img src="https://img.shields.io/badge/Slides-grey?&logo=MicrosoftPowerPoint&logoColor=white" alt="Slides"></a> -->
-   <!--  <a href="https://icml.cc/media/PosterPDFs/ICML%202022/a8acc28734d4fe90ea24353d901ae678.png"> <img src="https://img.shields.io/badge/Poster-grey?logo=airplayvideo&logoColor=white" alt="Poster"></a> -->
+    <a href="https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202024/30950.png?t=1717149681.4445298"> <img src="https://img.shields.io/badge/Poster-grey?logo=airplayvideo&logoColor=white" alt="Poster"></a>
 </p>
 
 ## Motivation
@@ -95,15 +95,16 @@ That being said, CIGA is definitely not the ultimate solution and it intrinsical
 Nevertheless, we hope the causal analysis and the inspired solution in CIGA could serve as an initial step towards more reliable graph learning algorithms that are able to generalize various OOD graphs from the real world. -->
 
 
-<!-- If you find our paper and repo useful, please cite our paper: -->
+If you find our paper and repo useful, please cite our paper: -->
 
-<!-- ```bibtex
-@InProceedings{chen2022ciga,
-  title       = {Learning Causally Invariant Representations for Out-of-Distribution Generalization on Graphs},
-  author      = {Yongqiang Chen and Yonggang Zhang and Yatao Bian and Han Yang and Kaili Ma and Binghui Xie and Tongliang Liu and Bo Han and James Cheng},
-  booktitle   = {Advances in Neural Information Processing Systems},
-  year        = {2022}
+```bibtex -->
+@inproceedings{piao2024improving,
+  title={Improving out-of-distribution generalization in graphs via hierarchical semantic environments},
+  author={Piao, Yinhua and Lee, Sangseon and Lu, Yijingxiu and Kim, Sun},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={27631--27640},
+  year={2024}
 }
-``` -->
+```
 
 Ack: The readme is inspired by [CIGA](https://github.com/LFhase/CIGA). 😄
